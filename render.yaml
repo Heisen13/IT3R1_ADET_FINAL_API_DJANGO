@@ -3,7 +3,7 @@ services:
     name: rfid-api
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn backend.wsgi"
+    startCommand: "gunicorn core.wsgi"
     envVars:
       - key: DATABASE_URL
         value: postgresql://rfid_db_oyhg_user:WXJNdMwLRf9wGFt2J2aiBiR3IIKcwkX8@dpg-d0ku6r3uibrs739rr0m0-a.singapore-postgres.render.com/rfid_db_oyhg
