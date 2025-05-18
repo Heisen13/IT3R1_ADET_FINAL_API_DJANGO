@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rfid-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn backend.wsgi"
+    envVars:
+      - key: DATABASE_URL
+        value: YOUR_DATABASE_URL
+      - key: DJANGO_SECRET_KEY
+        value: YOUR_SECRET_KEY
+      - key: ALLOWED_HOSTS
+        value: rfid-api.onrender.com
